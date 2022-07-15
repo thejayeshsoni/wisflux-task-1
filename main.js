@@ -150,3 +150,33 @@ const user1 = {
 }
 const copy = { ...user, address: "Jaipur" }
 console.log(copy);
+
+
+
+// Use reduce function
+// on Array
+const numbers = [15.5, 2.3, 1.1, 4.7];
+const ans = numbers.reduce(getSum, 0);
+function getSum(total, num) {
+    return total + num;
+}
+console.log(ans);
+
+
+// on Object
+const add = {
+    a: { value: 1 },
+    b: { value: 2 },
+    c: { value: 3 }
+}
+const total = Object.values(add).reduce((t, { value }) => t + value, 0)
+console.log(total)
+/*
+const add = {
+  a: 1,
+  b: 2,
+  c: 3
+}
+const total = Object.values(add).reduce((t, n) => t + n)
+console.log(total)
+*/
