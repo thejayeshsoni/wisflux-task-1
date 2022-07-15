@@ -30,3 +30,10 @@ function capitalize(arr) {
     return arr;
 }
 console.log(capitalize(members));
+
+
+// Get entries where age is between 41 - 60
+const specificAge = members.filter(function (el) {
+    return el.age > 40 && el.age < 61;
+});
+console.log(specificAge);
