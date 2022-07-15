@@ -65,25 +65,23 @@ let yougPerson = [];
 let oldPerson = [];
 let noAgePerson = [];
 function divide(arr) {
-    for (let index = 0; index < arr.length; index++) {
-        if (arr[index].age !== undefined) {
-            if (arr[index].age <= 35) {
-                let temp = {};
-                temp.name = arr[index].name;
-                temp.age = arr[index].age;
-                yougPerson.push(temp);
-            } else {
-                let temp = {};
-                temp.name = arr[index].name;
-                temp.age = arr[index].age;
-                oldPerson.push(temp);
-            }
+    if (arr.age !== undefined) {
+        if (arr.age <= 35) {
+            let temp = {};
+            temp.name = arr.name;
+            temp.age = arr.age;
+            yougPerson.push(temp);
         } else {
-            noAgePerson.push(arr[index].name);
+            let temp = {};
+            temp.name = arr.name;
+            temp.age = arr.age;
+            oldPerson.push(temp);
         }
+    } else {
+        noAgePerson.push(arr.name);
     }
 }
-divide(members);
+members.map(divide);
 dividedPersons.young = yougPerson;
 dividedPersons.old = oldPerson;
 dividedPersons.noage = noAgePerson;
