@@ -96,3 +96,8 @@ console.log(dividedPersons);
  */
 members.splice(1, 0, { name: "Jayesh SONI", age: 21 });
 console.log(members);
+
+
+// extract first and second element using destructing
+const [array0, array1] = members.map(obj => obj.name + " : " + obj.age)
+console.log(array0 + "\n" + array1);
