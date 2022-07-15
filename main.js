@@ -19,3 +19,14 @@ const firstName = result.map(function (fName) {
     return fName.substring(0, fName.indexOf(' '));
 });
 console.log(firstName);
+
+
+// Make everyone's last names in UPPERCASE in given array of objects
+function capitalize(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        var name = arr[i].name;
+        arr[i].name = name.slice(0, name.indexOf(" ")) + " " + name.slice(name.indexOf(" ") + 1).toUpperCase();
+    }
+    return arr;
+}
+console.log(capitalize(members));
