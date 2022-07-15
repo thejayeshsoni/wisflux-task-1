@@ -37,3 +37,10 @@ const specificAge = members.filter(function (el) {
     return el.age > 40 && el.age < 61;
 });
 console.log(specificAge);
+
+
+// Get average age
+const getSumOfAges = members.reduce((acc, curr) => curr.age !== undefined ? acc + curr.age : acc + 0, 0);
+const getCountOfAges = members.reduce((acc, cur) => cur.age !== undefined ? ++acc : acc, 0);
+const getAverageAge = getSumOfAges / getCountOfAges;
+console.log(getAverageAge);
