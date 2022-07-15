@@ -101,3 +101,11 @@ console.log(members);
 // extract first and second element using destructing
 const [array0, array1] = members.map(obj => obj.name + " : " + obj.age)
 console.log(array0 + "\n" + array1);
+
+
+/*
+Create a new array instance adding a new member at index 0,
+    and keeping existing afterwards
+*/
+members.splice(0, 0, { name: "Riddhi JAIN", age: 20 });
+console.log(members);
