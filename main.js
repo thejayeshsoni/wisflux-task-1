@@ -109,3 +109,8 @@ Create a new array instance adding a new member at index 0,
 */
 members.splice(0, 0, { name: "Riddhi JAIN", age: 20 });
 console.log(members);
+
+
+// Extract properties of object using destructuring
+const { name, age } = members[2];
+console.log(name + ":" + age);
