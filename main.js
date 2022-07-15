@@ -86,3 +86,13 @@ dividedPersons.young = yougPerson;
 dividedPersons.old = oldPerson;
 dividedPersons.noage = noAgePerson;
 console.log(dividedPersons);
+
+
+// add a new member to same members array instance at index 2
+/**
+ * splice() takes 3 or more arguments. The first is the start index: the place where we’ll start making the changes. 
+ * The second is the delete count parameter. We’re adding to the array, so the delete count is 0 in all our examples. 
+ * After this, you can add one or many items to add to the array.
+ */
+members.splice(1, 0, { name: "Jayesh SONI", age: 21 });
+console.log(members);
