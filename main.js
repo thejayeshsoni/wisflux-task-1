@@ -121,6 +121,18 @@ const person = {
     firstName: 'Tom',
     lastName: 'Cruise'
 }
-
 const { firstName: name_of_person, lastName } = person
 console.log(name_of_person);
+
+
+/*
+Destructure any property of an object and use spread operator
+    to get remaining properties in an object
+*/
+const user = {
+    'name': 'Alex',
+    'address': '15th Park Avenue',
+    'age': 43
+}
+const { address, ...user_details } = user;
+console.log(user_details);
