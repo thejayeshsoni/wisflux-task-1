@@ -136,3 +136,17 @@ const user = {
 }
 const { address, ...user_details } = user;
 console.log(user_details);
+
+
+
+/*
+Create a new object by copying using spread operator, override
+    one of the properties to assign a new value in the same step
+*/
+const user1 = {
+    'name': 'Sam',
+    'address': '15th Park Avenue',
+    'age': 45
+}
+const copy = { ...user, address: "Jaipur" }
+console.log(copy);
