@@ -43,9 +43,48 @@ console.log(specificAge);
 const getSumOfAges = members.reduce((acc, curr) => curr.age !== undefined ? acc + curr.age : acc + 0, 0);
 const getCountOfAges = members.reduce((acc, cur) => cur.age !== undefined ? ++acc : acc, 0);
 const getAverageAge = getSumOfAges / getCountOfAges;
-console.log(getAverageAge);
+console.log(`\nAverage Age = ${getAverageAge}`);
 
 
 // Get Person with maximum age
 const personWithMaxAge = Math.max.apply(Math, members.map(function (o) { return o.age !== undefined ? o.age : 0; }))
-console.log(personWithMaxAge);
+console.log(`\nPerson having maximum Age : ${personWithMaxAge}`);
+
+
+/*
+Divide persons in three groups, result should look like
+{
+    'young': [],
+        'old': [],
+            'noage': []
+}
+    Less than 35yrs is young, above 35 is old
+*/
+let dividedPersons = {};
+let yougPerson = [];
+let oldPerson = [];
+let noAgePerson = [];
+function divide(arr) {
+    for (let index = 0; index < arr.length; index++) {
+        if (arr[index].age !== undefined) {
+            if (arr[index].age <= 35) {
+                let temp = {};
+                temp.name = arr[index].name;
+                temp.age = arr[index].age;
+                yougPerson.push(temp);
+            } else {
+                let temp = {};
+                temp.name = arr[index].name;
+                temp.age = arr[index].age;
+                oldPerson.push(temp);
+            }
+        } else {
+            noAgePerson.push(arr[index].name);
+        }
+    }
+}
+divide(members);
+dividedPersons.young = yougPerson;
+dividedPersons.old = oldPerson;
+dividedPersons.noage = noAgePerson;
+console.log(dividedPersons);
