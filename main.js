@@ -114,3 +114,13 @@ console.log(members);
 // Extract properties of object using destructuring
 const { name, age } = members[2];
 console.log(name + ":" + age);
+
+
+// Rename extracted property of object while destructing
+const person = {
+    firstName: 'Tom',
+    lastName: 'Cruise'
+}
+
+const { firstName: name_of_person, lastName } = person
+console.log(name_of_person);
