@@ -44,3 +44,8 @@ const getSumOfAges = members.reduce((acc, curr) => curr.age !== undefined ? acc 
 const getCountOfAges = members.reduce((acc, cur) => cur.age !== undefined ? ++acc : acc, 0);
 const getAverageAge = getSumOfAges / getCountOfAges;
 console.log(getAverageAge);
+
+
+// Get Person with maximum age
+const personWithMaxAge = Math.max.apply(Math, members.map(function (o) { return o.age !== undefined ? o.age : 0; }))
+console.log(personWithMaxAge);
